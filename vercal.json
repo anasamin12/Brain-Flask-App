@@ -4,7 +4,7 @@
         {"src": "app.py", "use": "@vercel/python"}
     ],
     "routes": [
-        {"src": "^/classify$", "methods": ["POST"], "dest": "app.py"},
-        {"src": "/(.*)", "status": 404}
+        {"src": "/", "dest": "app.py"},
+        {"src": "/classify", "methods": ["POST"], "dest": "app.py"}
     ]
 }
