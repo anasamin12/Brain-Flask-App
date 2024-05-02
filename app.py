@@ -17,6 +17,7 @@ print("Output details:", output_details)
 
 @app.route('/classify', methods=['POST'])
 def classify_image():
+    return jsonify({'message': 'Endpoint is working'})
     image_file = request.files['image']
     if not image_file:
         return jsonify({'error': 'No image file provided.'}), 400
@@ -28,7 +29,8 @@ def classify_image():
     image = cv2.imdecode(image_np, cv2.IMREAD_COLOR)
     if image is None:
         return jsonify({'error': 'Image decoding failed.'}), 400
-
+    if __name__ == '__main__':
+    app.run(debug=True)
   
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
  
